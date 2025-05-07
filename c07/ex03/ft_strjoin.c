@@ -6,7 +6,7 @@
 /*   By: fbenini- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 12:55:24 by fbenini-          #+#    #+#             */
-/*   Updated: 2025/05/06 18:49:03 by fbenini-         ###   ########.fr       */
+/*   Updated: 2025/05/07 12:08:19 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,16 @@ int	arr_size(int size, char **strs, char *sep)
 
 	i = 0;
 	result = 0;
+	if (size == 0)
+		return (1);
 	while (i < size)
 	{
 		result += ft_strlen(strs[i]);
-		result += ft_strlen(sep);
+		if (i < size - 1)
+			result += ft_strlen(sep);
 		i++;
 	}
-	return (result);
+	return (result + 1);
 }
 
 void	ft_strconcat(char *dest, char *src, char *sep)
@@ -63,23 +66,32 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	int		i;
 	int		len;
 
+	if (size == 0)
+	{
+		dest = malloc(sizeof(char));
+		if (!dest)
+			return (NULL);
+		dest[0] = '\0';
+		return (dest);
+	}
 	i = 0;
 	len = arr_size(size, strs, sep);
 	dest = malloc(sizeof(char) * len);
+	if (!dest)
+		return (NULL);
 	while (i < size)
 	{
 		if (i != size - 1)
-			ft_strconcat(dest, strs[i], sep);
+			ft_strconcat(dest, strs[i++], sep);
 		else
-			ft_strconcat(dest, strs[i], "");
-		i++;
+			ft_strconcat(dest, strs[i++], "");
 	}
 	return (dest);
 }
 // #include <stdio.h>
 // int	main(void)
 // {
-// 	char	*arr[] = {"dasd", "dasd", "agr"};
+// 	char	*arr[] = {"dasd", "re", "bvc"};
 // 	char	*str;
 //
 // 	str = ft_strjoin(3, arr, "-");
