@@ -67,7 +67,7 @@ void	ft_putnbr_base(int nbr, char *base)
 		ft_putchar('-');
 		num = nbr * -1;
 	}
-	if (num >= 0 && num <= count)
+	if (num >= 0 && num < count)
 	{
 		ft_putchar(base[num]);
 	}
