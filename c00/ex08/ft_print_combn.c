@@ -6,7 +6,7 @@
 /*   By: fbenini- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:29:52 by fbenini-          #+#    #+#             */
-/*   Updated: 2025/05/13 16:04:15 by fbenini-         ###   ########.fr       */
+/*   Updated: 2025/05/13 16:14:21 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	ft_print_formatted(int n, int n_digits, int *is_first)
 		write(1, ", ", 2);
 	if (intlen(n) == n_digits - 1 && ft_is_ascendant(c))
 		write(1, "0", 1);
-	while (i < n_digits && ft_is_ascendant(c))
+	while (i < n_digits && ft_is_ascendant(c) && c[i])
 	{
 		write(1, &c[i], 1);
 		*is_first = 0;
@@ -90,5 +90,5 @@ void	ft_print_combn(int n)
 //
 // int	main(void)
 // {
-// 	ft_print_combn(9);
+// 	ft_print_combn(3);
 // }
