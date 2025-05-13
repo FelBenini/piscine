@@ -6,7 +6,7 @@
 /*   By: fbenini- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:29:52 by fbenini-          #+#    #+#             */
-/*   Updated: 2025/05/13 16:14:21 by fbenini-         ###   ########.fr       */
+/*   Updated: 2025/05/13 16:19:53 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,8 +87,8 @@ void	ft_print_combn(int n)
 		i++;
 	}
 }
-//
-// int	main(void)
-// {
-// 	ft_print_combn(3);
-// }
+
+int	main(void)
+{
+	ft_print_combn(8);
+}
