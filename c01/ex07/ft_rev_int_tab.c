@@ -6,7 +6,7 @@
 /*   By: fbenini- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 10:01:16 by fbenini-          #+#    #+#             */
-/*   Updated: 2025/04/21 10:20:16 by fbenini-         ###   ########.fr       */
+/*   Updated: 2025/05/13 16:04:53 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	ft_rev_int_tab(int *tab, int size)
 		tab[i] = tab[size - 1 - i];
 		tab[size - 1 - i] = temp;
 		i++;
-	}	
+	}
 }

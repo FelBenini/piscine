@@ -6,7 +6,7 @@
 /*   By: fbenini- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 12:29:52 by fbenini-          #+#    #+#             */
-/*   Updated: 2025/04/29 16:34:53 by fbenini-         ###   ########.fr       */
+/*   Updated: 2025/05/13 16:04:15 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,15 +80,15 @@ void	ft_print_combn(int n)
 	if (n <= 0 || n >= 10)
 		return ;
 	while (intlen(i) <= n)
-	{	
+	{
 		if (i > 123456789)
 			break ;
 		ft_print_formatted(i, n, &is_first);
 		i++;
 	}
 }
-
-int	main(void)
-{
-	ft_print_combn(9);
-}
+//
+// int	main(void)
+// {
+// 	ft_print_combn(9);
+// }

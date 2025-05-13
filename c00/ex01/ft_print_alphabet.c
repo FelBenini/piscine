@@ -6,7 +6,7 @@
 /*   By: fbenini- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 14:47:11 by fbenini-          #+#    #+#             */
-/*   Updated: 2025/04/23 11:50:48 by SET YOUR USER    ###   LAUSANNE.ch       */
+/*   Updated: 2025/05/13 16:03:41 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -20,6 +20,5 @@ void	ft_print_alphabet(void)
 	{
 		write(1, &a, 1);
 		a++;
-	
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: fbenini- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 11:37:35 by fbenini-          #+#    #+#             */
-/*   Updated: 2025/04/30 13:43:09 by fbenini-         ###   ########.fr       */
+/*   Updated: 2025/05/13 16:05:24 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	}
 	return (dest);
 }
-
-#include <stdio.h>
-int	main(void)
-{
-	char	src[] = "punana";
-	char	dest[] = "bananada de marmelo";
-	ft_strncpy(dest, src, 3);
-	printf("%s\n%s\n", src, dest);
-}
+//
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	char	src[] = "punana";
+// 	char	dest[] = "bananada de marmelo";
+// 	ft_strncpy(dest, src, 3);
+// 	printf("%s\n%s\n", src, dest);
+// }

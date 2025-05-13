@@ -6,7 +6,7 @@
 /*   By: fbenini- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 14:50:49 by fbenini-          #+#    #+#             */
-/*   Updated: 2025/04/16 12:45:02 by fbenini-         ###   ########.fr       */
+/*   Updated: 2025/05/13 16:04:01 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -21,7 +21,7 @@ void	ft_is_negative(int n)
 		write(1, &buffer, 1);
 	}
 	else
-	{	
+	{
 		buffer = 'P';
 		write(1, &buffer, 1);
 	}

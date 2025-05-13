@@ -6,7 +6,7 @@
 /*   By: fbenini- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 12:49:23 by fbenini-          #+#    #+#             */
-/*   Updated: 2025/04/30 17:41:00 by fbenini-         ###   ########.fr       */
+/*   Updated: 2025/05/13 15:52:49 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,32 +57,30 @@ int	find_pos(char *str, char to_find)
 			return (i);
 		i++;
 	}
-	return (0);
+	return (-1);
 }
 
-int	ft_raisenum(int num, int exponent)
+int	convert_from_base(int *result, char *base, char *str, int i)
 {
-	int	i;
-	int	result;
+	int	digit;
+	int	len;
 
-	i = 1;
-	result = num;
-	if (exponent == 0)
-		return (1);
-	while (i < exponent)
+	len = ft_strlen(base);
+	while (str[i])
 	{
-		result *= num;
+		digit = find_pos(base, str[i]);
+		if (digit == -1)
+			break ;
+		*result = *result * len + digit;
 		i++;
 	}
-	return (result);
+	return (*result);
 }
 
 int	ft_atoi_base(char *str, char *base)
 {
-	int	len;
 	int	result;
 	int	i;
-	int	str_len;
 	int	negative;
 
 	result = 0;
@@ -90,22 +88,19 @@ int	ft_atoi_base(char *str, char *base)
 	negative = 1;
 	if (!check_base(base))
 		return (0);
-	len = ft_strlen(base);
-	str_len = ft_strlen(str);
-	while (str[i])
+	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
+		i++;
+	while (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
 			negative *= -1;
-		else if (str[i] == '+' || str[i] == ' ')
-			negative *= 1;
-		else
-			result += (find_pos(base, str[i])) * ft_raisenum(len,
-					str_len - i - 1);
 		i++;
 	}
+	convert_from_base(&result, base, str, i);
 	return (result * negative);
 }
-/*int	main(void)
-{
-	printf("%d", ft_atoi_base("    --+-14", "0123456789ABCDEF"));
-}*/
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	printf("%d", ft_atoi_base("    --+-A", "0123456789ABCDEF"));
+// }
