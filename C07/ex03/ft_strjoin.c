@@ -6,7 +6,7 @@
 /*   By: fbenini- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 12:55:24 by fbenini-          #+#    #+#             */
-/*   Updated: 2025/05/07 12:08:19 by fbenini-         ###   ########.fr       */
+/*   Updated: 2025/05/13 22:56:41 by fbenini-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,14 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		dest = malloc(sizeof(char));
 		if (!dest)
 			return (NULL);
-		dest[0] = '\0';
-		return (dest);
+		return (dest[0] = '\0', dest);
 	}
 	i = 0;
 	len = arr_size(size, strs, sep);
-	dest = malloc(sizeof(char) * len);
+	dest = (char *)malloc(sizeof(char) * len);
 	if (!dest)
 		return (NULL);
+	dest[0] = '\0';
 	while (i < size)
 	{
 		if (i != size - 1)
@@ -86,7 +86,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		else
 			ft_strconcat(dest, strs[i++], "");
 	}
-	return (dest);
+	return (dest[len] = '\0', dest);
 }
 // #include <stdio.h>
 // int	main(void)
