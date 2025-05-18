@@ -6,13 +6,13 @@
 #    By: fbenini- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/18 11:06:34 by fbenini-          #+#    #+#              #
-#    Updated: 2025/05/18 11:22:07 by fbenini-         ###   ########.fr        #
+#    Updated: 2025/05/18 11:38:38 by fbenini-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRCS = $(wildcard srcs/*.c)
+SRCS = ${wildcard srcs/*.c}
 
 HDRS = includes/ft.h
 
@@ -24,18 +24,19 @@ RM = rm -f
 
 CFLAGS = -Wall -Wextra -Werror
 
-.c.o:
-	${CC} ${CFLAGS} -I./includes -c $< -o ${<:.c=.o}
+srcs/%.o: srcs/%.c ${HDRS}
+	${CC} ${CFLAGS} -I includes -c $< -o $@
 
-${NAME}: ${OBJS}
+$(NAME): $(OBJS)
 	ar rc ${NAME} ${OBJS}
 
 all: ${NAME}
 
-clean: ${RM} ${OBJS}
+clean:
+	${RM} ${OBJS}
 
 fclean: clean
-	rm -f ${NAME}
+	${RM} ${NAME}
 
 re: fclean all
 
